@@ -1,0 +1,42 @@
+html {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  text-align: center;
+}
+
+input {
+  margin-bottom: 20px;
+  margin-top: 5px;
+  padding: 5px 5px;
+}
+
+.delteBtn,
+#btn {
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+}
+
+.book {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+}
