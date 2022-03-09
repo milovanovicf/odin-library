@@ -3,8 +3,6 @@ const btn = document.querySelector("#btn");
 const authorVal = document.querySelector("#author");
 const titleVal = document.querySelector("#title");
 const pagesVal = document.querySelector("#pages");
-let delBtn;
-let elem;
 let myLibary = [];
 
 function Book() {}
@@ -37,26 +35,26 @@ btn.addEventListener("click", function (e) {
   temp.addBookToLibary();
 
   renderBookAndDelete(temp);
-  console.log(myLibary);
-  delBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    myLibary.forEach((book, i) => {
-      myLibary.splice(i, 1);
-      elem.innerText = "";
-    });
-  });
 });
 
 function renderBookAndDelete(book) {
-  elem = document.createElement("p");
+  const elem = document.createElement("p");
   elem.classList.add("book");
   elem.innerText = `${book.title} by ${book.author} with ${book.pages} pages.`;
   ul.appendChild(elem);
 
-  delBtn = document.createElement("button");
+  const delBtn = document.createElement("button");
   delBtn.classList.add("delteBtn");
   delBtn.innerText = "Delete";
   elem.appendChild(delBtn);
+
+  delBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    myLibary.filter((book) => {
+      book != elem;
+      elem.remove();
+    });
+  });
 }
 
 renderBookAndDelete(it);
