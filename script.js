@@ -1,5 +1,5 @@
 const ul = document.querySelector(".books");
-const btn = document.querySelector("#btn");
+const submitBtn = document.querySelector("#btn");
 const authorVal = document.querySelector("#author");
 const titleVal = document.querySelector("#title");
 const pagesVal = document.querySelector("#pages");
@@ -25,7 +25,7 @@ const bagOfBones = new addBook("Bag of Bones", "Stephen King", 666);
 it.addBookToLibary();
 bagOfBones.addBookToLibary();
 
-btn.addEventListener("click", function (e) {
+submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
   const temp = new addBook(
     `${titleVal.value}`,
